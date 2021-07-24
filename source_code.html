@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            FLAMES GAME
+        </title>
+        <script>
+            function myFunction1(){
+                var x = document.forms["form1"];
+                    var text = [];
+                    var i;
+                    for (i = 0; i < x.length ;i++) {
+                    text[i]= x.elements[i].value;
+                    }
+                var i;
+                var copy1=text[0];
+                var copy2=text[1];
+                text[0]=text[0].toUpperCase();
+                text[1]=text[1].toUpperCase();
+                console.log(text[0]);
+                console.log(text[1]);
+                if (text[0] === "" || text[1]=="") {
+                    alert("Your Name or Your Dream Partner name is missing!!!");
+                    return false;
+                }
+                var j;
+                var flames=["F","L","A","M","E","S"];
+                var count=0;
+                for (i = 0; i < text[0].length; i++) {
+                    for (j = 0; j < text[1].length; j++) {
+                        if (text[0][i]==text[1][j]) {
+                           text[0][i]="_";
+                           text[1][j]="_";
+                           count=count+2;
+                           break;
+                        } 
+                    }
+                }
+                var rem=text[0].length + text[1].length - count;
+                var index=0;
+                var i;
+                for (i = 1; i <= 5; i++) {
+                    var count=0;
+                    while ( count != rem){
+                        if(flames[index % 6] != "_"){
+                            count=count+1;
+                    }
+                    index=index+1;
+                    }
+                    flames[(index - 1) %6] = "_";
+                    }
+                    // document.write(flames[1]);
+                    for(i = 0;i < 6;i++){
+                        if(flames[i] != "_"){
+                        console.log(flames[i]);
+                        if(flames[i]=="F"){                                                     
+                            document.getElementById("test").innerHTML = "<br><br><br><br><br>"+"The Relationship of "+ copy1+" and "+ copy2+" will finally end in FRIENDSHIP...A friend is one of the best things you can be and the greatest things you can have."+"<br><br><br><br><br>"+  "<br><button onclick='location.href=\"final.html\"' type='button' id='samp' class='btn1'  name='find'>Play Again</button><br>";
+                            return true;
+                        }else if(flames[i]=="L") {
+                            document.getElementById("test").innerHTML = "<br><br><br><br><br>"+"The Relationship of "+ copy1+" and "+ copy2+" will finally end in LOVE...CONGRATS...YOUR LIFE IS GOING TO RUIN"+"<br><br><br><br><br>"+  "<br><button onclick='location.href=\"final.html\"' type='button' id='samp' class='btn1'  name='find'>Play Again</button><br>";  
+                            return true;
+                        }else if (flames[i]=="A") {
+                            document.getElementById("test").innerHTML = "<br><br><br><br><br>"+"The Relationship of "+ copy1+" and "+ copy2+" will finally end in AFFECTION...True love is deep spiritual affection"+"<br><br><br><br><br>"+  "<br><button onclick='location.href=\"final.html\"' type='button' id='samp' class='btn1'  name='find'>Play Again</button><br>";
+                            return true;
+                        }else if (flames[i]=="M") {
+                            document.getElementById("test").innerHTML = "<br><br><br><br><br>"+"The Relationship of "+ copy1+" and "+ copy2+" will finally end in MARRIAGE...Marriage lets you annoy one special person for the rest of your life."+"<br><br><br><br><br>"+  "<br><button onclick='location.href=\"final.html\"' type='button' id='samp' class='btn1'  name='find'>Play Again</button><br>";
+                            return true;
+                        }else if (flames[i]=="E") {
+                            document.getElementById("test").innerHTML = "<br><br><br><br><br>"+"The Relationship of "+ copy1+" and "+ copy2+" will finally end in ENEMY...Love your enemies, for they tell you your faults."+"<br><br><br><br><br>"+  "<br><button onclick='location.href=\"final.html\"' type='button' id='samp' class='btn1'  name='find'>Play Again</button><br>";
+                            return true;
+                        }else if (flames[i]=='S'){
+                            document.getElementById("test").innerHTML = "<br><br><br><br><br>"+"The Relationship of "+ copy1+" and "+ copy2+" will finally end in SIBLINGS...Having a Brother/sister from another mother is always special"+"<br><br><br><br><br>"+  "<br><button onclick='location.href=\"final.html\"' type='button' id='samp' class='btn1'  name='find'>Play Again</button><br>";
+                            return true;
+                        }}
+            }}
+            </script>
+        <link rel="stylesheet" href="design.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <section id="nav-bar">
+            <nav class="navbar navbar-dark bg-dark">
+                <!-- <a class="navbar-brand" href="#">FLAMES</a> -->
+                <a href="final.html">
+                <img src="trial_logo13.png" class="logoimg" ></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                      <a class="nav-link" href="#top">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#howitworks">How it Works?</a>
+                      </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#end">Contact Us</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+        </section>
+        <section id="top">
+            <div class="container text-center">
+                <h1 class="title text-center">Do you know your partner?</h1>
+                <div class="row text-center">
+                    <div class="col-md-4 top">
+                        <img src="heart1.png" class="top-img">
+                    </div>
+                    <div class="col-md-4 top">
+                        <!-- <img src="top2.png" class="top-img"> -->
+                        <!-- <h4>Online Branding</h4> -->
+                        <p>Bring Back Your Childhood Memories From Here<br> Play the Flames Game Online to find the relationship with your Dream partner.<br>Play with your Friends.<br>Have fun!</p>
+                    </div>
+                    <div class="col-md-4 top">
+                        <img src="heart1.png" class="top-img">
+                    </div>
+                </div>
+            </div>
+            <img src="wavel.png" class="top-img">
+        </section>
+
+
+        <section id="form" >
+            <div class="container text-center">
+            <div class="row" >
+                <div class="col-sm-3">
+                </div>
+                <div class="col-sm-6">
+                    <form id="form1" method="POST" >
+                        
+                        <div class="abc"id="test">
+                            <h1>FLAMES GAME</h1><hr>
+                            <label for="uname"><b>YourName</b></label>
+                            <input type="text" id="uname" name="yourname" placeholder="Enter your name"required><hr>
+                            <label for="pwd"><b>DreamPartnerName</b></label>
+                            <input type="text"name="partnername" id="pwd"placeholder="Enter your partnername"required>
+                            <button type="submit" id="samp" class="btn1"  onclick="myFunction1();" name="find">Show Flames</button><br>
+                            <button type="reset" class="btn1">Reset</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+        </section>
+        
+        <section id="#">
+          <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+      </section>
+        <section id="howitworks">
+          <div class="col-sm-3">
+          </div>
+          <div class="col-sm-12">
+            <div class="container"> 
+                <!-- style="background-color:#f8cce6;" -->
+                <div  class="jumbotron ">   
+            <div class="row">   
+            <div class="container"> 
+                
+                <h1>How it works?</h1><h1>
+                    </h1><h3>What is FlamesGame?</h3>
+                    <p>
+                      FlamesGame is a relationship calculating algorithm famous between the youngsters. At the time of graduation everyone might heard about this and many of them tried out this secretly. Some took this as very serious also. So what FLAMES stance for?
+                      <br>
+                      F - Friendship
+                      <br>
+                      L - Love
+                      <br>
+                      A - Affection
+                      <br>
+                      M - Marriage
+                      <br>
+                      E - Enemy
+                      <br>
+                      S - Sister (Sibling)
+                    </p>
+                    <h3>How we can calculate the FLAMES?</h3>
+                    <p>
+                      It is very easy to explain with some example:
+                      <br>
+                      Your name: <b>asd</b>
+                      <br>
+                      Partner name: <b>abcd</b>
+                      <br><br>
+                      Mainly two steps are there:
+                    </p>
+                    <ol>
+                      <li>Get the flames count
+                        <ul>
+                          <li>Take the two names ('asd' and 'abcd')</li>
+                          <li>Remove the common characters (two common characters 'a', 'd') </li>
+                          <li>Get the count of the characters that are left (Removed a,d and the rest are s,b,c. So total 3.)</li>
+                        </ul>
+                      </li>
+                      <li>Get the flames result
+                        <ul>
+                          <li>We take FLAMES letters ('F', 'L', 'A', 'M', 'E', 'S')</li>
+                          <li>And start removing letters using the flames count we got.</li>
+                          <li>And the letter which last the process is the result.</li>
+                        </ul>
+                      </li>
+                    </ol>
+                    <p>
+                      In our example we got <b>flames count = 3</b>. So first we takes FLAMES.
+                      <br>
+                      <b>FLAMES</b>
+                      <br>
+                      Then we start count from left up to flames count 3. Then remove the letter which is in the position 3. In this case it is 'A'. So the letters become:
+                      <br>
+                      <b>FLMES</b>
+                      <br>
+                      Then we start count again from the letter which is removed ie, from 'M'. So the next character to remove is 'S'. So our letters become:
+                      <br>
+                      <b>FLME</b>
+                      <br>
+                      After next step:
+                      <br>
+                      <b>FLE</b>
+                      <br>
+                      Then:
+                      <br>
+                      <b>FE</b>
+                      <br>
+                      Last:
+                      <br>
+                      <b>F</b>
+                      <br>
+                      So the result is '<b>Friend</b>'.              
+                    </p>
+                </div>
+            </div>
+            </div></div>
+        </div>
+        </section>
+
+        <section id="social-media">
+          <div class="container text-center">
+              <p>FIND US ON SOCIAL MEDIA</p>
+              <div class="social-icons">
+                  <a href="https://instagram.com/itzzz_go_kul?igshid=1cbea3zrpolbz"><img src="instagram-logo.jfif"></a>
+                  <a href="#"><img src="whatsapp-logo.jfif"></a>
+                  <a href="https://www.facebook.com/gokul.moorthy.3958"><img src="facebook-logo4.jfif"></a>
+                  <a href="#"><img src="twitter-logo.png"></a>
+                  <a href="https://www.linkedin.com/in/gokulnath-j-2571211a0"><img src="linkedin-logo3.png"></a>
+              </div>
+          </div>
+      </section>
+
+      <!-- footer section -->
+<section id="footer">
+  <img src="wave2.png" class="footer-img">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-4 footer-box">
+              <img src="flames-game-logo.png">
+              <p>Bring Back Your childhood memories by playing this wonderful Flames Game Online to find the relationship with your Dream partner.Play with your Friends.Have FUn!</p>
+          </div>
+          <div class="col-md-4 footer-box">
+              <p ><b>CONTACT US</b></p>
+              <p><i class="fa fa-map-marker"></i>CIT college, Coimbatore</p>
+              <p><i class="fa fa-phone"></i> 0123456789</p>
+              <p><i class="fa fa-envelope-o"></i> gokulsmart2001@gmail.com</p>
+          </div>
+          <div class="col-md-4 footer-box">
+              <p ><b><br><br>Terms of Use</b></p>
+              <p ><b>Privacy Policy</b></p>
+          </div>
+
+      </div>
+      <hr>
+      <p class="copyright" id="end">Created by gokulsmart2001@gmail.com</p>
+  </div>
+
+</section>
+
+<!-- smooth scroll -->
+
+<script src="smooth-scroll.js"></script>
+<script>
+      var scroll= new SmoothScroll('a[href*="#"]');
+</script>
+
+    </body>
+</html>
